@@ -86,6 +86,8 @@ class UserModel {
         return $stmt->execute([$id]);
     }
 
+
+    
     public static function deactivate($id) {
         $db = Database::connect();
         $stmt = $db->prepare("UPDATE users SET active=0 WHERE id=?");
