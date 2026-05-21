@@ -11,7 +11,6 @@ class UserController {
             return false; 
         }
         
-        
         $nombre = trim($nombre);
         $usuario = trim($usuario);
         $email = trim($email);
@@ -248,7 +247,7 @@ class UserController {
 
         // No permitir desactivarse a sí mismo
         if ((int)$id === (int)($_SESSION['user']['id'] ?? 0)) {
-            $_SESSION['flash_error'] = 'No puedes desactivar tu propia cuenta!!!';
+            $_SESSION['flash_error'] = 'No puedes desactivar tu propia cuenta';
             return false;
         }
 
