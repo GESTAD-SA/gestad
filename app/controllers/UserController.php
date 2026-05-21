@@ -11,6 +11,7 @@ class UserController {
             return false; 
         }
         
+        
         $nombre = trim($nombre);
         $usuario = trim($usuario);
         $email = trim($email);
@@ -29,12 +30,13 @@ class UserController {
             return false;
         }
         
+
         // Verificar si la cédula ya existe
         if (ColombiaValidator::cedulaExiste($cedula)) { 
             $_SESSION['flash_error'] = 'La cédula ingresada ya está registrada en el sistema'; 
             return false; 
         }
-        // Verificar si el usuario ya existe
+        // Verificar si el usuario ya existe, si existe mostrar un mensaje de error
         if (UserModel::findByUsername($usuario)) { 
             $_SESSION['flash_error'] = 'El nombre de usuario no es valido. Por favor, elija otro.'; 
             return false; 
@@ -246,7 +248,7 @@ class UserController {
 
         // No permitir desactivarse a sí mismo
         if ((int)$id === (int)($_SESSION['user']['id'] ?? 0)) {
-            $_SESSION['flash_error'] = 'No puedes desactivar tu propia cuenta';
+            $_SESSION['flash_error'] = 'No puedes desactivar tu propia cuenta!!!';
             return false;
         }
 
