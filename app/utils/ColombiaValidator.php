@@ -28,7 +28,6 @@ class ColombiaValidator {
         }
         
         // La cédula ya fue validada para tener exactamente 10 dígitos numéricos
-        
         return [
             'isValid' => true,
             'message' => 'Cédula válida.'
