@@ -1,0 +1,7 @@
+#dependencias Composer
+/vendor/
+
+#variables de entorno
+.env
+
+.phpunit.result.cache
